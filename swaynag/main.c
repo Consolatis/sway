@@ -110,6 +110,11 @@ int main(int argc, char **argv) {
 	signal(SIGTERM, sig_handler);
 
 	swaynag_setup(&swaynag);
+
+	/* FIXME: use proper config parsing */
+	swaynag.details.close_timeout = 5;
+	swaynag.details.close_timeout_cancel = true;
+
 	swaynag_run(&swaynag);
 
 cleanup:
